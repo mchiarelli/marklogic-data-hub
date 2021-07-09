@@ -1,0 +1,13 @@
+{
+		"functionName": "deleteDatasource",
+		"params": [
+			{
+				"datatype": "array",
+				"name": "collections",
+				"$javaClass": "com.fasterxml.jackson.databind.node.ArrayNode"
+			}
+		],
+		"return": {
+      "datatype": "boolean"
+    }
+}

@@ -12,7 +12,7 @@ buildscript {
 
 plugins {
     id "net.saliman.properties"
-    id "java"
+    id "application"
     id "nebula.ospackage" version "8.4.1"
 
     id "io.snyk.gradle.plugin.snykplugin" version "0.4"
@@ -31,6 +31,10 @@ snyk {
     api = snykToken
     autoDownload = true
     autoUpdate = true
+}
+
+application {
+    mainClass = 'com.marklogic.hub.central.Application'
 }
 
 ext {
@@ -105,6 +109,11 @@ dependencies {
     testImplementation "org.springframework.security:spring-security-test:${springSecurityVersion}"
 
     testImplementation "javax.ws.rs:javax.ws.rs-api:2.1.1"
+    
+    //implementation group: 'commons-io', name: 'commons-io', version: '2.9.0'
+    testImplementation "commons-io:commons-io:2.9.0"
+    
+    testRuntimeOnly "org.junit.platform:junit-platform-commons:1.7.0"
 }
 
 // We need this to access test resources such as "entity-reference-model" project from core data hub project
